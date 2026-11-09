@@ -1,0 +1,78 @@
+@font-face {
+    font-family: SpongeBobFont;
+    src: url('../fonts/spongebob.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    background-color: #0A1B2E;
+    font-family: SpongeBobFont;
+}
+
+.bg_img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    
+    background: url('../img/spongebob_island.jpg') no-repeat center center / cover;
+    filter: blur(5px);
+}
+
+.welcome_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;            
+    margin: 0;
+}
+
+.text {
+    font-family: SpongeBobFont !important;
+
+    background-image: url('../img/spongebob_holes.png');
+    background-repeat: repeat;
+    background-size: 50px 50px;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    position: relative;
+    z-index: 10;
+}
+
+.button {
+    position: relative;
+    background: transparent;
+    border: none;
+    padding: 15px 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    background: black;
+    inset: 0 0%;
+    z-index: 0;
+    clip-path: polygon(5% 0%, 100% 0%, 90% 100%, 0% 100%);
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+.button .text {
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+}
